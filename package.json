@@ -1,8 +1,8 @@
 {
-  "name": "gatsby-starter-default",
-  "description": "Gatsby default starter",
+  "name": "softbricks-homepage",
+  "description": "Softbricks Homepage",
   "version": "1.0.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Lukas Sporrer <lukas.sporrer@softbricks.de>",
   "dependencies": {
     "gatsby": "^1.8.12",
     "gatsby-link": "^1.6.8",
@@ -15,7 +15,7 @@
   "main": "n/a",
   "scripts": {
     "build": "gatsby build",
-    "develop": "gatsby develop",
+    "dev": "gatsby develop",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write 'src/**/*.js'",
     "test": "echo \"Error: no test specified\" && exit 0"
   },
