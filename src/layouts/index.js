@@ -1,60 +1,89 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import Link from 'gatsby-link'
-import Helmet from 'react-helmet'
-import logo from './sb-logo.png'
+import React from "react";
+import PropTypes from "prop-types";
+import Link from "gatsby-link";
+import Helmet from "react-helmet";
+import logo from "./sb-logo.png";
 
-import './index.css'
+import "./index.css";
 
 const Header = () =>
   <div
     style={{
-      background: 'rgba(43, 65, 98, 1)'
+      background: "rgba(43, 65, 98, 1)"
     }}
   >
     <div
       style={{
-        margin: '0 auto',
-        maxWidth: 960,
-        padding: '1rem 1rem',
+        margin: "0 auto",
+        padding: "0.5rem 0.5rem",
+        height: "50px",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center"
       }}
     >
-      <Link
-        to="/"
+      <div
         style={{
-          color: 'white',
-          textDecoration: 'none',
+          width: "70vw",
+          display: "flex",
+          justifyContent: "space-between"
         }}
       >
-        <img width='20%' src={logo} alt="Logo" />
-      </Link>
+        <Link
+          to="/"
+          style={{
+            color: "white",
+            textDecoration: "none"
+          }}
+        >
+          <img width="25%" src={logo} alt="Logo" />
+        </Link>
+        <div className="right">
+          <Link
+            to="/about"
+            style={{
+              color: "white",
+              textDecoration: "none"
+            }}
+          >
+            About
+          </Link>
+        </div>
+      </div>
     </div>
-  </div>
+  </div>;
 
 const TemplateWrapper = ({ children }) =>
-  <div>
+  <div
+    style={{
+      display: "flex",
+      flexDirection: "column",
+      height: "100vh",
+      background: "rgba(43, 65, 98, 1)"
+    }}
+  >
     <Helmet
-      title="Gatsby Default Starter"
+      title="Softbricks"
       meta={[
-        { name: 'description', content: 'Sample' },
-        { name: 'keywords', content: 'sample, something' },
+        { name: "description", content: "Sample" },
+        { name: "keywords", content: "sample, something" }
       ]}
     />
     <Header />
-    <div
-      style={{
-        margin: '0 auto',
-        maxWidth: 960,
-        padding: '0px 1.0875rem 1.45rem',
-        paddingTop: 0,
-      }}
-    >
-      {children()}
+    <div>
+      <div
+        style={{
+          margin: "0 auto",
+          paddingTop: 0
+        }}
+      >
+        {children()}
+      </div>
     </div>
-  </div>
+  </div>;
 
 TemplateWrapper.propTypes = {
-  children: PropTypes.func,
-}
+  children: PropTypes.func
+};
 
-export default TemplateWrapper
+export default TemplateWrapper;
