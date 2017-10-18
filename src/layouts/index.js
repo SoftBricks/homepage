@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import Link from "gatsby-link";
 import Helmet from "react-helmet";
+import favicon from "../../public/static/sb.ico";
 
 import "./index.css";
 
@@ -112,7 +113,9 @@ const TemplateWrapper = ({ children }) =>
         { name: "description", content: "Sample" },
         { name: "keywords", content: "sample, something" }
       ]}
-    />
+    >
+      <link rel="icon" href={favicon} type="image/x-icon" />
+    </Helmet>
     <Header />
     <div>
       <div
