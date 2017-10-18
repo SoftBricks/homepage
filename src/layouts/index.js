@@ -77,7 +77,7 @@ const Header = () =>
             Team
           </Link>
           <Link
-            to="/about"
+            to="/impressum"
             style={{
               color: "white",
               textDecoration: "none"
