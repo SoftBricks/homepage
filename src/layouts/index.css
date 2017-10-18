@@ -167,3 +167,7 @@ body {
 h3, h4 {
   color: rgb(251, 127, 90);
 }
+
+.space > * {
+  padding: 5px;
+}

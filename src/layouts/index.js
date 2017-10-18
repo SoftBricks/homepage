@@ -56,7 +56,7 @@ const Header = () =>
             </div>
           </div>
         </Link>
-        <div className="right center">
+        <div className="right space">
           <Link
             to="/about"
             style={{
@@ -65,6 +65,33 @@ const Header = () =>
             }}
           >
             About
+          </Link>
+          <Link
+            to="/about"
+            style={{
+              color: "white",
+              textDecoration: "none"
+            }}
+          >
+            Team
+          </Link>
+          <Link
+            to="/about"
+            style={{
+              color: "white",
+              textDecoration: "none"
+            }}
+          >
+            Impressum
+          </Link>
+          <Link
+            to="/about"
+            style={{
+              color: "white",
+              textDecoration: "none"
+            }}
+          >
+            Contact
           </Link>
         </div>
       </div>
