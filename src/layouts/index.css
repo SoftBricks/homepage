@@ -131,6 +131,10 @@ body {
          animation: fadein 2s;
 }
 
+.desc {
+  text-align: left;
+}
+
 @keyframes fadein {
   from { opacity: 0; }
   to   { opacity: 1; }
