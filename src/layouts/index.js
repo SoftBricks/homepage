@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import Link from "gatsby-link";
 import Helmet from "react-helmet";
 import favicon from "../../public/static/sb.ico";
+import Footer from "./footer";
 
 import "./index.css";
 
@@ -127,6 +128,7 @@ const TemplateWrapper = ({ children }) =>
         {children()}
       </div>
     </div>
+    <Footer />
   </div>;
 
 TemplateWrapper.propTypes = {

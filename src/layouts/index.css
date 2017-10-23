@@ -171,3 +171,36 @@ h3, h4 {
 .space > * {
   padding: 5px;
 }
+
+footer {
+  background-color: #333333;
+  width: 100vw;
+}
+
+.footer-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  width: 70vw;
+} 
+
+.copyright {
+  text-transform: uppercase;
+  color: #EAE8E7;
+  font-size: 12px;
+  padding: 0.5rem;
+}
+
+.footer-links > nav > * {
+  padding: 0.5rem;
+  color: #EAE8E7
+}
+
