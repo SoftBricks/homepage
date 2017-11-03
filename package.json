@@ -4,10 +4,11 @@
   "version": "1.0.0",
   "author": "Lukas Sporrer <lukas.sporrer@softbricks.de>",
   "dependencies": {
-    "gatsby": "^1.8.12",
+    "gatsby": "^1.9.98",
     "gatsby-link": "^1.6.8",
     "gatsby-plugin-google-fonts": "0.0.3",
-    "gatsby-plugin-react-helmet": "^1.0.3"
+    "gatsby-plugin-react-helmet": "^1.0.3",
+    "gatsby-plugin-styled-components": "1.0.5"
   },
   "keywords": [
     "gatsby"
