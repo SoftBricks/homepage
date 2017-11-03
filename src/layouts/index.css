@@ -13,6 +13,10 @@ body {
   box-sizing: border-box;
 }
 
+p:last-child {
+  margin-bottom: 0;
+}
+
 .right {
   display: flex;
   flex-direction: row;
