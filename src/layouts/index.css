@@ -5,7 +5,7 @@ html {
 }
 body {
   margin: 0;
-  color: #edebea;
+  color: #151517;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -20,6 +20,7 @@ p:last-child {
 .logo {
   display: flex;
   align-items: flex-end;
+  color: white;
 }
 
 .logo-text {
