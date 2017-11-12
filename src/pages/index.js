@@ -32,15 +32,16 @@ const customers = [
 ];
 
 const HeroImage = styled.div`
-  min-height: 80vh;
-  background: url(${background}) center center;
-  background-size: cover;
-  max-width: 100%;
-  display: flex;
-  alignItems: stretch;
+  height: 80vh;
+  position: relative;
 `;
 
 const HeroDarkener = Center.extend`
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   background-color: rgba(0, 0, 0, 0.8);
   flex-grow: 1;
 `;
@@ -122,56 +123,53 @@ const SkillImage = styled.div`
   border-radius: 4px 4px 0 0;
 `;
 
-const IndexPage = ({ data }) => (
-  console.log(data),
-  (
-    <div>
-      <HeroImage>
-        <HeroDarkener>
-          <HeroText>
-            Wir liefern digitale Lösungen,{" "}
-            <HeroTextHighlicht>die unsere Kunden lieben.</HeroTextHighlicht>
-          </HeroText>
-        </HeroDarkener>
-      </HeroImage>
-      <CustomerList>
-        <CustomerContainer>
-          {customers.map(logo =>
-            <CustomerLogo>
-              <img src={logo.src} alt={logo.alt} />
-            </CustomerLogo>
+const IndexPage = ({ data }) =>
+  <div>
+    <HeroImage>
+      <Img sizes={data.contentfulAsset.sizes} style={{ height: "80vh" }} />
+      <HeroDarkener>
+        <HeroText>
+          Wir liefern digitale Lösungen,{" "}
+          <HeroTextHighlicht>die unsere Kunden lieben.</HeroTextHighlicht>
+        </HeroText>
+      </HeroDarkener>
+    </HeroImage>
+    <CustomerList>
+      <CustomerContainer>
+        {customers.map(logo =>
+          <CustomerLogo key={logo.alt}>
+            <img src={logo.src} alt={logo.alt} />
+          </CustomerLogo>
+        )}
+      </CustomerContainer>
+    </CustomerList>
+    <ServiceSection>
+      <ResponsiveContainer>
+        <Center>
+          <H2>Unsere Leistungen</H2>
+        </Center>
+        <SkillGrid>
+          {data.allContentfulServices.edges.map(({ node }) =>
+            <Skill key={node.id}>
+              <SkillImage />
+              <Inset scale="xl">
+                <H4>
+                  {node.title}
+                </H4>
+                <Text.Detail>
+                  <div
+                    dangerouslySetInnerHTML={{
+                      __html: node.description.childMarkdownRemark.html
+                    }}
+                  />
+                </Text.Detail>
+              </Inset>
+            </Skill>
           )}
-        </CustomerContainer>
-      </CustomerList>
-      <ServiceSection>
-        <ResponsiveContainer>
-          <Center>
-            <H2>Unsere Leistungen</H2>
-          </Center>
-          <SkillGrid>
-            {data.allContentfulServices.edges.map(({ node }) =>
-              <Skill key={node.id}>
-                <SkillImage />
-                <Inset scale="xl">
-                  <H4>
-                    {node.title}
-                  </H4>
-                  <Text.Detail>
-                    <div
-                      dangerouslySetInnerHTML={{
-                        __html: node.description.childMarkdownRemark.html
-                      }}
-                    />
-                  </Text.Detail>
-                </Inset>
-              </Skill>
-            )}
-          </SkillGrid>
-        </ResponsiveContainer>
-      </ServiceSection>
-    </div>
-  )
-);
+        </SkillGrid>
+      </ResponsiveContainer>
+    </ServiceSection>
+  </div>;
 
 export default IndexPage;
 
@@ -188,6 +186,11 @@ export const query = graphql`
             }
           }
         }
+      }
+    }
+    contentfulAsset(title: { eq: "Hero" }) {
+      sizes(maxHeight: 1000) {
+        ...GatsbyContentfulSizes
       }
     }
   }
