@@ -6,17 +6,13 @@ import Nav from "../components/nav";
 import Text from "../components/text";
 import Center from "../components/center";
 import Inset from "../components/inset";
+import Toolbar from "../components/toolbar";
 import colors from "../constants/colors";
 
 const FooterContainer = styled.footer`
   background-color: ${colors.black};
   padding: 32px 0;
 `;
-const FooterLayout = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-`
 const Copyright = styled(Text.Detail)`
   padding: 32px 0 0;
   color: ${colors.white5};
@@ -27,12 +23,12 @@ export default class Footer extends Component {
     return (
       <FooterContainer>
         <ResponsiveContainer>
-          <FooterLayout>
+          <Toolbar>
             <SoftBricksLogo />
             <div className="footer-links">
               <Nav />
             </div>
-          </FooterLayout>
+          </Toolbar>
           <Center>
             <Copyright>© 2017 SoftBricks. All Rights Reserved</Copyright>
           </Center>
