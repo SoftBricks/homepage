@@ -118,9 +118,10 @@ const Skill = styled.div`
 `;
 
 const SkillImage = styled.div`
-  height: 150px;
+  max-height: 175px;
   background-color: #ffe6df;
   border-radius: 4px 4px 0 0;
+  overflow: hidden;
 `;
 
 const IndexPage = ({ data }) =>
@@ -151,7 +152,9 @@ const IndexPage = ({ data }) =>
         <SkillGrid>
           {data.allContentfulServices.edges.map(({ node }) =>
             <Skill key={node.id}>
-              <SkillImage />
+              <SkillImage>
+                {node.image && <Img sizes={node.image.sizes} />}
+              </SkillImage>
               <Inset scale="xl">
                 <H4>
                   {node.title}
@@ -183,6 +186,11 @@ export const query = graphql`
           description {
             childMarkdownRemark {
               html
+            }
+          }
+          image {
+            sizes(maxWidth: 426) {
+              ...GatsbyContentfulSizes
             }
           }
         }
