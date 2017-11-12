@@ -1,39 +1,39 @@
 import React, { Component } from "react";
+import styled from "styled-components";
+import SoftBricksLogo from "../components/softbricks-logo";
+import ResponsiveContainer from "../components/responsive-container";
+import Nav from "../components/nav";
+import Text from "../components/text";
+import Center from "../components/center";
+import Inset from "../components/inset";
+import Toolbar from "../components/toolbar";
+import colors from "../constants/colors";
+
+const FooterContainer = styled.footer`
+  background-color: ${colors.black};
+  padding: 32px 0;
+`;
+const Copyright = styled(Text.Detail)`
+  padding: 32px 0 0;
+  color: ${colors.white5};
+`
 
 export default class Footer extends Component {
   render() {
     return (
-      <footer>
-        <div className="footer-wrapper">
-          <div className="footer">
-            <div className="logo">
-              <div className="logo-text">SoftBricks</div>
-              <div className="logo-icon">
-                <div className="row">
-                  <div />
-                </div>
-                <div className="row">
-                  <div />
-                  <div />
-                </div>
-                <div className="row">
-                  <div />
-                  <div />
-                  <div />
-                </div>
-              </div>
-            </div>
+      <FooterContainer>
+        <ResponsiveContainer>
+          <Toolbar>
+            <SoftBricksLogo />
             <div className="footer-links">
-              <nav>
-                <a href="">Home</a>
-                <a href="">Contact</a>
-                <a href="">Impressum</a>
-              </nav>
-              <div className="copyright">All content copyright 2015</div>
+              <Nav />
             </div>
-          </div>
-        </div>
-      </footer>
+          </Toolbar>
+          <Center>
+            <Copyright>© 2017 SoftBricks. All Rights Reserved</Copyright>
+          </Center>
+        </ResponsiveContainer>
+      </FooterContainer>
     );
   }
 }
