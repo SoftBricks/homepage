@@ -102,58 +102,66 @@ const SkillImage = styled.div`
   border-radius: 4px 4px 0 0;
 `;
 
-const IndexPage = ({ data }) =>
-  <div>
-    <HeroImage>
-      <HeroDarkener>
-        <HeroText>
-          Wir liefern digitale Lösungen,{" "}
-          <HeroTextHighlicht>die unsere Kunden lieben.</HeroTextHighlicht>
-        </HeroText>
-      </HeroDarkener>
-    </HeroImage>
-    <CustomerList>
-      <CustomerContainer>
-        <CustomerLogo>
-          <img src={otto} alt="Otto Versand" />
-        </CustomerLogo>
+const IndexPage = ({ data }) => (
+  console.log(data),
+  (
+    <div>
+      <HeroImage>
+        <HeroDarkener>
+          <HeroText>
+            Wir liefern digitale Lösungen,{" "}
+            <HeroTextHighlicht>die unsere Kunden lieben.</HeroTextHighlicht>
+          </HeroText>
+        </HeroDarkener>
+      </HeroImage>
+      <CustomerList>
+        <CustomerContainer>
+          <CustomerLogo>
+            <img src={otto} alt="Otto Versand" />
+          </CustomerLogo>
 
-        <CustomerLogo>
-          <img src={walz} alt="Versandhaus Walz" />
-        </CustomerLogo>
+          <CustomerLogo>
+            <img src={walz} alt="Versandhaus Walz" />
+          </CustomerLogo>
 
-        <CustomerLogo>
-          <img src={ludwig} alt="Repro Ludwig" />
-        </CustomerLogo>
+          <CustomerLogo>
+            <img src={ludwig} alt="Repro Ludwig" />
+          </CustomerLogo>
 
-        <CustomerLogo>
-          <img src={resch} alt="Badischer Wein eKfr" />
-        </CustomerLogo>
-      </CustomerContainer>
-    </CustomerList>
-    <ServiceSection>
-      <ResponsiveContainer>
-        <Center>
-          <H2>Unsere Leistungen</H2>
-        </Center>
-        <SkillGrid>
-          {data.allContentfulServices.edges.map(({ node }) =>
-            <Skill key={node.id}>
-              <SkillImage />
-              <Inset scale="xl">
-                <H4>
-                  {node.title}
-                </H4>
-                <Text.Detail>
-                  {node.description.description}
-                </Text.Detail>
-              </Inset>
-            </Skill>
-          )}
-        </SkillGrid>
-      </ResponsiveContainer>
-    </ServiceSection>
-  </div>;
+          <CustomerLogo>
+            <img src={resch} alt="Badischer Wein eKfr" />
+          </CustomerLogo>
+        </CustomerContainer>
+      </CustomerList>
+      <ServiceSection>
+        <ResponsiveContainer>
+          <Center>
+            <H2>Unsere Leistungen</H2>
+          </Center>
+          <SkillGrid>
+            {data.allContentfulServices.edges.map(({ node }) =>
+              <Skill key={node.id}>
+                <SkillImage />
+                <Inset scale="xl">
+                  <H4>
+                    {node.title}
+                  </H4>
+                  <Text.Detail>
+                    <div
+                      dangerouslySetInnerHTML={{
+                        __html: node.description.childMarkdownRemark.html
+                      }}
+                    />
+                  </Text.Detail>
+                </Inset>
+              </Skill>
+            )}
+          </SkillGrid>
+        </ResponsiveContainer>
+      </ServiceSection>
+    </div>
+  )
+);
 
 export default IndexPage;
 
@@ -165,7 +173,9 @@ export const query = graphql`
           id
           title
           description {
-            description
+            childMarkdownRemark {
+              html
+            }
           }
         }
       }
