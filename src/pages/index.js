@@ -1,15 +1,35 @@
 import React from "react";
 import Link from "gatsby-link";
 import styled from "styled-components";
+import Img from "gatsby-image";
 import Center from "../components/center";
 import ResponsiveContainer from "../components/responsive-container";
 import Inset from "../components/inset";
 import Text from "../components/text";
 import background from "../../public/static/bg2.jpeg";
-import walz from "../../public/static/Versandh_Walz.png";
-import otto from "../../public/static/otto.png";
-import resch from "../../public/static/badw_logo_2.png";
-import ludwig from "../../public/static/ludwigmedia.png";
+import VersandhausWalzLogo from "../../public/static/compressed/versandhaus-walz.png";
+import OttoLogo from "../../public/static/compressed/otto.png";
+import LudwigMediaLogo from "../../public/static/compressed/ludwigmedia.png";
+import BadischerWeinLogo from "../../public/static/compressed/badischer-wein.png";
+
+const customers = [
+  {
+    src: OttoLogo,
+    alt: "Otto (GmbH & CoKG)"
+  },
+  {
+    src: VersandhausWalzLogo,
+    alt: "Versandhaus Walz"
+  },
+  {
+    src: LudwigMediaLogo,
+    alt: "LUDWIG:media gmbh"
+  },
+  {
+    src: BadischerWeinLogo,
+    alt: "Badischer Wein eKfr"
+  }
+];
 
 const HeroImage = styled.div`
   min-height: 80vh;
@@ -116,21 +136,11 @@ const IndexPage = ({ data }) => (
       </HeroImage>
       <CustomerList>
         <CustomerContainer>
-          <CustomerLogo>
-            <img src={otto} alt="Otto Versand" />
-          </CustomerLogo>
-
-          <CustomerLogo>
-            <img src={walz} alt="Versandhaus Walz" />
-          </CustomerLogo>
-
-          <CustomerLogo>
-            <img src={ludwig} alt="Repro Ludwig" />
-          </CustomerLogo>
-
-          <CustomerLogo>
-            <img src={resch} alt="Badischer Wein eKfr" />
-          </CustomerLogo>
+          {customers.map(logo =>
+            <CustomerLogo>
+              <img src={logo.src} alt={logo.alt} />
+            </CustomerLogo>
+          )}
         </CustomerContainer>
       </CustomerList>
       <ServiceSection>
@@ -182,13 +192,3 @@ export const query = graphql`
     }
   }
 `;
-
-// export const query = graphql`
-//   query LayoutQuery {
-//     site {
-//       siteMetadata {
-//         title
-//       }
-//     }
-//   }
-// `;

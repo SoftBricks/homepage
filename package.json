@@ -5,6 +5,7 @@
   "author": "Lukas Sporrer <lukas.sporrer@softbricks.de>",
   "dependencies": {
     "gatsby": "^1.9.98",
+    "gatsby-image": "1.0.24",
     "gatsby-link": "^1.6.8",
     "gatsby-plugin-google-fonts": "0.0.3",
     "gatsby-plugin-react-helmet": "^1.0.3",
