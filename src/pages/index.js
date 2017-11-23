@@ -6,6 +6,7 @@ import Center from "../components/center";
 import ResponsiveContainer from "../components/responsive-container";
 import Inset from "../components/inset";
 import Text from "../components/text";
+import colors from '../constants/colors';
 import background from "../../public/static/bg2.jpeg";
 import VersandhausWalzLogo from "../../public/static/compressed/versandhaus-walz.png";
 import OttoLogo from "../../public/static/compressed/otto.png";
@@ -51,6 +52,7 @@ const HeroText = styled.h1`
   max-width: 600px;
   font-family: Montserrat, sans-serif;
   text-align: center;
+  color: ${colors.white};
 `;
 
 const HeroTextHighlicht = styled.span`color: rgb(251, 127, 90);`;
