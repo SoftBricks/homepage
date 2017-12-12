@@ -26,8 +26,8 @@ const Impressum = () =>
           Tel.: +49 (0) 89 - 24 41 02 28<br />
           Fax: +49 (0) 89 - 24 41 02 29<br />
           E-Mail:
-          <a href="mailto:Stefan.Sporrer@softbricks.de">
-            Stefan.Sporrer@softbricks.de
+          <a href="mailto:info@softbricks.de">
+            info@softbricks.de
           </a>
         </p>
         <p>
