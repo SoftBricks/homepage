@@ -73,7 +73,6 @@ const CustomerList = Center.extend`
 
 const CustomerLogo = styled.div`
   flex: 1 1 auto;
-  filter: grayscale(100%);
   max-height: 60px;
   margin: 10px;
   transition: all 0.5s ease-in-out;
