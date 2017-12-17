@@ -18,10 +18,7 @@ const NavLink = styled(Link)`
 
 const Nav = () =>
   <Inline alignItems="center" scale="l">
-    <NavLink to="/about">About</NavLink>
-    <NavLink to="/about">Team</NavLink>
     <NavLink to="/impressum">Impressum</NavLink>
-    <NavLink to="/about">Contact</NavLink>
   </Inline>;
 
 export default Nav;
