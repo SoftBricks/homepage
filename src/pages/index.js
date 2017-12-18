@@ -179,7 +179,7 @@ export default IndexPage;
 
 export const query = graphql`
   query AllServices {
-    allContentfulServices {
+    allContentfulServices(sort: { fields: [order], order: ASC }) {
       edges {
         node {
           id
