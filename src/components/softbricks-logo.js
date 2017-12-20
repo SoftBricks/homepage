@@ -1,22 +1,9 @@
 import React from "react";
+import bricks from "./bricks.svg";
 
 const SoftBricksLogo = () =>
   <div className="logo">
-    <div className="logo-text">SoftBricks</div>
-    <div className="logo-icon">
-      <div className="row">
-        <div />
-      </div>
-      <div className="row">
-        <div />
-        <div />
-      </div>
-      <div className="row">
-        <div />
-        <div />
-        <div />
-      </div>
-    </div>
+    <img height={28} src={bricks} alt="Softbricks" />
   </div>;
 
 export default SoftBricksLogo;
