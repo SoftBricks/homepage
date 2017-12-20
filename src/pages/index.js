@@ -6,7 +6,7 @@ import Center from "../components/center";
 import ResponsiveContainer from "../components/responsive-container";
 import Inset from "../components/inset";
 import Text from "../components/text";
-import colors from '../constants/colors';
+import colors from "../constants/colors";
 import background from "../../public/static/bg2.jpeg";
 import VersandhausWalzLogo from "../../public/static/compressed/versandhaus-walz.png";
 import OttoLogo from "../../public/static/compressed/otto.png";
@@ -55,7 +55,7 @@ const HeroText = styled.h1`
   color: ${colors.white};
 `;
 
-const HeroTextHighlicht = styled.span`color: rgb(251, 127, 90);`;
+const HeroTextHighlicht = styled.span`color: ${colors.orange};`;
 
 const CustomerContainer = ResponsiveContainer.extend`
   display: flex;
@@ -84,7 +84,7 @@ const CustomerLogo = styled.div`
 `;
 
 const H2 = styled.h2`
-  color: rgb(251, 127, 90);
+  color: ${colors.orange};
   margin: 0 0 24px;
 `;
 const H4 = styled.h4`

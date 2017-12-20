@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import Link from "gatsby-link";
 import Helmet from "react-helmet";
 import styled from "styled-components";
-import favicon from "../../public/static/sb.ico";
+import favicon from "../../public/static/favicon.ico";
 import Inline from "../components/inline";
 import Stack from "../components/stack";
 import SoftBricksLogo from "../components/softbricks-logo";
