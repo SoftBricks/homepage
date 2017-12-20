@@ -55,7 +55,7 @@ const HeroText = styled.h1`
   color: ${colors.white};
 `;
 
-const HeroTextHighlicht = styled.span`color: #ef891c;`;
+const HeroTextHighlicht = styled.span`color: ${colors.orange};`;
 
 const CustomerContainer = ResponsiveContainer.extend`
   display: flex;
@@ -84,7 +84,7 @@ const CustomerLogo = styled.div`
 `;
 
 const H2 = styled.h2`
-  color: #ef891c;
+  color: ${colors.orange};
   margin: 0 0 24px;
 `;
 const H4 = styled.h4`
