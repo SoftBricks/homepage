@@ -1,9 +1,9 @@
 import React from "react";
-import bricks from "./bricks.svg";
+import softbricks from "../../public/static/softbricks.svg";
 
 const SoftBricksLogo = () =>
   <div className="logo">
-    <img height={28} src={bricks} alt="Softbricks" />
+    <img height={28} src={softbricks} alt="Softbricks" />
   </div>;
 
 export default SoftBricksLogo;
