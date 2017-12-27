@@ -45,7 +45,11 @@ const TemplateWrapper = ({ children }) =>
       title="Softbricks"
       meta={[
         { name: "description", content: "Sample" },
-        { name: "keywords", content: "sample, something" }
+        { name: "keywords", content: "sample, something" },
+        {
+          name: "google-site-verification",
+          content: "wt_pjO9OaKGWsP724hetEkeo-9sI_I9veo1t5ak8Liw"
+        }
       ]}
     >
       <link rel="icon" href={favicon} type="image/x-icon" />
