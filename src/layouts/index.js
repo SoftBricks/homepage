@@ -22,18 +22,11 @@ const HorizontalBar = styled.div`
   z-index: 1;
 `;
 
-const LogoLink = styled(Link)`
-  color: white;
-  text-decoration: none;
-`;
-
 const Header = () =>
   <HorizontalBar>
     <ResponsiveContainer>
       <Toolbar>
-        <LogoLink to="/">
-          <SoftBricksLogo />
-        </LogoLink>
+        <SoftBricksLogo />
         <Nav />
       </Toolbar>
     </ResponsiveContainer>
