@@ -28,11 +28,6 @@ const BannerBar = styled(HorizontalBar)`
   position: static;
 `;
 
-const LogoLink = styled(Link)`
-  color: white;
-  text-decoration: none;
-`;
-
 const CookieHeader = () =>
   <BannerBar>
     <ResponsiveContainer>
@@ -44,9 +39,7 @@ const Header = () =>
   <HorizontalBar>
     <ResponsiveContainer>
       <Toolbar>
-        <LogoLink to="/">
-          <SoftBricksLogo />
-        </LogoLink>
+        <SoftBricksLogo />
         <Nav />
       </Toolbar>
     </ResponsiveContainer>

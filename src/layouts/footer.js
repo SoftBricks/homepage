@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import styled from "styled-components";
+import Link from "gatsby-link";
 import SoftBricksLogo from "../components/softbricks-logo";
 import ResponsiveContainer from "../components/responsive-container";
 import Nav from "../components/nav";
@@ -18,6 +19,13 @@ const Copyright = styled(Text.Detail)`
   padding: 32px 0 0;
   color: ${colors.white5};
 `;
+const DatenschutzLink = styled(Link)`
+  text-decoration: none;
+  color: ${colors.white5};
+  :visited {
+    color: ${colors.white3};
+  }
+`
 
 export default class Footer extends Component {
   render() {
@@ -32,7 +40,7 @@ export default class Footer extends Component {
           </Toolbar>
           <Center>
             <Stack alignItems="center" scale="xl">
-              <Copyright>© 2017 SoftBricks. All Rights Reserved</Copyright>
+              <Copyright>© 2017 SoftBricks. All Rights Reserved | <DatenschutzLink to="/datenschutz">Datenschutzerklärung</DatenschutzLink></Copyright>
               <a
                 href="https://www.contentful.com/"
                 rel="nofollow"

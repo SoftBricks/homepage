@@ -3,7 +3,8 @@ const colors = {
   black: "#151517",
   gray: "#2e2e2f",
   white: "hsl(20, 7%, 91%)",
-  white5: "hsl(20, 7%, 50%)"
+  white5: "hsl(20, 7%, 50%)",
+  white3: "hsl(20, 7%, 30%)"
 };
 
 export default colors;
