@@ -61,11 +61,10 @@ class CookieBanner extends React.Component {
       ? null
       : <Banner>
           <p>
-            SoftBricks möchte Ihnen den bestmöglichen Service bieten. Dazu
-            speichern wir Informationen über Ihren Besuch in sogenannten
-            Cookies. Wenn Sie auf der Seite weitersurfsen, stimmen Sie der
-            Cookie-Nutzung zu. Detaillierte Informationen über den Einsatz von
-            Cookies auf dieser Webseite erhälten Sie unter “<BannerLink to="datenschutz">Datenschutz</BannerLink>”.
+            Um unsere Webseite für Sie optimal zu gestalten und fortlaufend
+            verbessern zu können, verwenden wir Cookies. Durch die weitere
+            Nutzung der Webseite stimmen Sie der Verwendung von Cookies zu.
+            Weitere Informationen zu Cookies erhalten Sie in unserer <BannerLink to="datenschutz">Datenschutzerklärung</BannerLink>
           </p>
           <CloseButton onClick={this.hideCookieBanner}>
             <CloseIcon />
