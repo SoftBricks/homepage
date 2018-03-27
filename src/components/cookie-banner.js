@@ -42,8 +42,13 @@ const CloseButton = styled.button`
 
 class CookieBanner extends React.Component {
   state = {
-    hideCookieBanner: localStorage.getItem("hideCookieBanner")
+    hideCookieBanner: true
   };
+  componentDidMount() {
+    this.setState({
+      hideCookieBanner: localStorage.getItem("hideCookieBanner")
+    });
+  }
   hideCookieBanner = () => {
     localStorage.setItem("hideCookieBanner", true);
     this.setState({
