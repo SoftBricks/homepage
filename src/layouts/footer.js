@@ -21,6 +21,7 @@ const Copyright = styled(Text.Detail)`
 `;
 const DatenschutzLink = styled(Link)`
   text-decoration: none;
+  color: ${colors.white5};
   :visited {
     color: ${colors.white3};
   }
