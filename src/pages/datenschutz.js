@@ -10,6 +10,22 @@ const Datenschutz = () =>
     <ResponsiveContainer>
       <DatenschutzContent>
         <h2>Datenschutzerklärung</h2>
+        <p>
+          <strong>SoftBricks Stefan Sporrer </strong>
+        </p>
+        <p>
+          <strong>Stefan Sporrer</strong>
+          <br />
+          Lindberghstr. 18<br />
+          80939 München<br />
+          Deutschland
+        </p>
+        <p>
+          Tel.: +49 (0) 89 - 24 41 02 28<br />
+          Fax: +49 (0) 89 - 24 41 02 29<br />
+          E-Mail:
+          <a href="mailto:info@softbricks.de">info@softbricks.de</a>
+        </p>
         <h3>Datenschutz</h3>
         <p>
           Die Betreiber dieser Seiten nehmen den Schutz Ihrer persönlichen Daten
@@ -157,6 +173,26 @@ const Datenschutz = () =>
           Betreiber der Seiten behalten sich ausdrücklich rechtliche Schritte
           im Falle der unverlangten Zusendung von Werbeinformationen, etwa durch
           Spam-E-Mails, vor.
+        </p>
+        <h3>
+          Verantwortlicher in Bezug auf Ihre personenbezogenen Daten auf dieser
+          Webseite:
+        </h3>
+        <p>
+          <strong>SoftBricks Stefan Sporrer </strong>
+        </p>
+        <p>
+          <strong>Stefan Sporrer</strong>
+          <br />
+          Lindberghstr. 18<br />
+          80939 München<br />
+          Deutschland
+        </p>
+        <p>
+          Tel.: +49 (0) 89 - 24 41 02 28<br />
+          Fax: +49 (0) 89 - 24 41 02 29<br />
+          E-Mail:
+          <a href="mailto:info@softbricks.de">info@softbricks.de</a>
         </p>
       </DatenschutzContent>
     </ResponsiveContainer>
