@@ -7,6 +7,7 @@ import ResponsiveContainer from "../components/responsive-container";
 import Inset from "../components/inset";
 import Text from "../components/text";
 import colors from "../constants/colors";
+import Layout from "../layouts";
 import background from "../../public/static/bg2.jpeg";
 import VersandhausWalzLogo from "../../public/static/compressed/versandhaus-walz.png";
 import OttoLogo from "../../public/static/compressed/otto.png";
@@ -126,7 +127,7 @@ const SkillImage = styled.div`
 `;
 
 const IndexPage = ({ data }) =>
-  <div>
+  <Layout>
     <HeroImage>
       <Img sizes={data.contentfulAsset.sizes} style={{ height: "80vh" }} />
       <HeroDarkener>
@@ -173,7 +174,7 @@ const IndexPage = ({ data }) =>
         </SkillGrid>
       </ResponsiveContainer>
     </ServiceSection>
-  </div>;
+  </Layout>;
 
 export default IndexPage;
 

@@ -62,7 +62,7 @@ const TemplateWrapper = ({ children }) =>
     </Helmet>
     <CookieHeader />
     <Header />
-    {children()}
+    {children}
     <Footer />
   </Stack>;
 
