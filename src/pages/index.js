@@ -129,7 +129,7 @@ const SkillImage = styled.div`
 const IndexPage = ({ data }) =>
   <Layout>
     <HeroImage>
-      <Img sizes={data.contentfulAsset.sizes} style={{ height: "80vh" }} />
+      <Img fluid={data.contentfulAsset.fluid} style={{ height: "80vh" }} />
       <HeroDarkener>
         <HeroText>
           Wir liefern digitale Lösungen,{" "}
@@ -155,7 +155,7 @@ const IndexPage = ({ data }) =>
           {data.allContentfulServices.edges.map(({ node }) =>
             <Skill key={node.id}>
               <SkillImage>
-                {node.image && <Img sizes={node.image.sizes} />}
+                {node.image && <Img fluid={node.image.fluid} />}
               </SkillImage>
               <Inset scale="xl">
                 <H4>
@@ -191,16 +191,16 @@ export const query = graphql`
             }
           }
           image {
-            sizes(maxWidth: 426) {
-              ...GatsbyContentfulSizes
+            fluid(maxWidth: 426) {
+              ...GatsbyContentfulFluid
             }
           }
         }
       }
     }
     contentfulAsset(title: { eq: "Hero" }) {
-      sizes(maxHeight: 1000) {
-        ...GatsbyContentfulSizes
+      fluid(maxHeight: 1000) {
+        ...GatsbyContentfulFluid
       }
     }
   }
