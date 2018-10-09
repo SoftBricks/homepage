@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import Helmet from "react-helmet";
 import styled from "styled-components";
 import favicon from "../../public/static/favicon.ico";
-import Inline from "../components/inline";
 import Stack from "../components/stack";
 import CookieBanner from "../components/cookie-banner";
 import SoftBricksLogo from "../components/softbricks-logo";
