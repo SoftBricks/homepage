@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import Link from "gatsby-link";
+import { Link } from "gatsby";
 import SoftBricksLogo from "../components/softbricks-logo";
 import ResponsiveContainer from "../components/responsive-container";
 import Nav from "../components/nav";
