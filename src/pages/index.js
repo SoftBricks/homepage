@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Img from "gatsby-image";
+import { graphql } from "gatsby"
 import Center from "../components/center";
 import ResponsiveContainer from "../components/responsive-container";
 import Inset from "../components/inset";
