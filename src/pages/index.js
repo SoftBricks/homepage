@@ -1,13 +1,13 @@
 import React from "react";
-import Link from "gatsby-link";
 import styled from "styled-components";
 import Img from "gatsby-image";
+import { graphql } from "gatsby"
 import Center from "../components/center";
 import ResponsiveContainer from "../components/responsive-container";
 import Inset from "../components/inset";
 import Text from "../components/text";
 import colors from "../constants/colors";
-import background from "../../public/static/bg2.jpeg";
+import Layout from "../layouts";
 import VersandhausWalzLogo from "../../public/static/compressed/versandhaus-walz.png";
 import OttoLogo from "../../public/static/compressed/otto.png";
 import LudwigMediaLogo from "../../public/static/compressed/ludwigmedia.png";
@@ -126,9 +126,9 @@ const SkillImage = styled.div`
 `;
 
 const IndexPage = ({ data }) =>
-  <div>
+  <Layout>
     <HeroImage>
-      <Img sizes={data.contentfulAsset.sizes} style={{ height: "80vh" }} />
+      <Img fluid={data.contentfulAsset.fluid} style={{ height: "80vh" }} />
       <HeroDarkener>
         <HeroText>
           Wir liefern digitale Lösungen,{" "}
@@ -154,7 +154,7 @@ const IndexPage = ({ data }) =>
           {data.allContentfulServices.edges.map(({ node }) =>
             <Skill key={node.id}>
               <SkillImage>
-                {node.image && <Img sizes={node.image.sizes} />}
+                {node.image && <Img fluid={node.image.fluid} />}
               </SkillImage>
               <Inset scale="xl">
                 <H4>
@@ -173,7 +173,7 @@ const IndexPage = ({ data }) =>
         </SkillGrid>
       </ResponsiveContainer>
     </ServiceSection>
-  </div>;
+  </Layout>;
 
 export default IndexPage;
 
@@ -190,16 +190,16 @@ export const query = graphql`
             }
           }
           image {
-            sizes(maxWidth: 426) {
-              ...GatsbyContentfulSizes
+            fluid(maxWidth: 426) {
+              ...GatsbyContentfulFluid
             }
           }
         }
       }
     }
     contentfulAsset(title: { eq: "Hero" }) {
-      sizes(maxHeight: 1000) {
-        ...GatsbyContentfulSizes
+      fluid(maxHeight: 1000) {
+        ...GatsbyContentfulFluid
       }
     }
   }

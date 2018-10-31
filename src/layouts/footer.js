@@ -1,12 +1,11 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import Link from "gatsby-link";
+import { Link } from "gatsby";
 import SoftBricksLogo from "../components/softbricks-logo";
 import ResponsiveContainer from "../components/responsive-container";
 import Nav from "../components/nav";
 import Text from "../components/text";
 import Center from "../components/center";
-import Inset from "../components/inset";
 import Stack from "../components/stack";
 import Toolbar from "../components/toolbar";
 import colors from "../constants/colors";
@@ -43,7 +42,7 @@ export default class Footer extends Component {
               <Copyright>© 2017 SoftBricks. All Rights Reserved | <DatenschutzLink to="/datenschutz">Datenschutzerklärung</DatenschutzLink></Copyright>
               <a
                 href="https://www.contentful.com/"
-                rel="nofollow"
+                rel="noopener noreferrer"
                 target="_blank"
               >
                 <img
