@@ -48,6 +48,7 @@ const HeroDarkener = Center.extend`
 `;
 
 const HeroText = styled.h1`
+  line-height: 1.1;
   font-size: 2.5rem;
   max-width: 22ch;
   @media (min-width: 50em) {
