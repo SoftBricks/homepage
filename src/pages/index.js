@@ -87,7 +87,7 @@ const H2 = styled.h2`
   color: ${colors.orange};
   margin: 0 0 24px;
 `;
-const H4 = styled.h4`
+const H3 = styled.h3`
   color: rgb(81, 84, 88);
   margin: 0 0 16px;
 `;
@@ -157,9 +157,9 @@ const IndexPage = ({ data }) =>
                 {node.image && <Img fluid={node.image.fluid} />}
               </SkillImage>
               <Inset scale="xl">
-                <H4>
+                <H3>
                   {node.title}
-                </H4>
+                </H3>
                 <Text.Detail>
                   <div
                     dangerouslySetInnerHTML={{
