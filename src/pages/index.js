@@ -8,10 +8,10 @@ import Inset from "../components/inset";
 import Text from "../components/text";
 import colors from "../constants/colors";
 import Layout from "../layouts";
-import VersandhausWalzLogo from "../../public/static/compressed/versandhaus-walz.png";
-import OttoLogo from "../../public/static/compressed/otto.png";
-import LudwigMediaLogo from "../../public/static/compressed/ludwigmedia.png";
-import BadischerWeinLogo from "../../public/static/compressed/badischer-wein.png";
+import VersandhausWalzLogo from "../assets/compressed/versandhaus-walz.png";
+import OttoLogo from "../assets/compressed/otto.png";
+import LudwigMediaLogo from "../assets/compressed/ludwigmedia.png";
+import BadischerWeinLogo from "../assets/compressed/badischer-wein.png";
 
 const customers = [
   {
