@@ -49,8 +49,10 @@ const HeroDarkener = Center.extend`
 
 const HeroText = styled.h1`
   font-size: 2.5rem;
-  max-width: 600px;
-  font-family: Montserrat, sans-serif;
+  max-width: 22ch;
+  @media (min-width: 50em) {
+    font-size: 3rem;
+  }
   text-align: center;
   color: ${colors.white};
 `;
