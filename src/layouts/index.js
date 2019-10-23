@@ -48,10 +48,13 @@ const Header = () => (
 const TemplateWrapper = ({ children }) => (
   <Stack scale="none">
     <Helmet
-      title="Softbricks"
+      title="Softbricks – Softwarehaus aus München"
       meta={[
-        { name: "description", content: "Sample" },
-        { name: "keywords", content: "sample, something" },
+        {
+          name: "description",
+          content:
+            "Softbricks ist ein Softwarehaus aus München spezialisiert auf maßgeschneiderte, nachhalting und effiziente Lösungen für Versandhäußer und den Onlinehandel"
+        },
         {
           name: "google-site-verification",
           content: "wt_pjO9OaKGWsP724hetEkeo-9sI_I9veo1t5ak8Liw"
