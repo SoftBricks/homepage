@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Img from "gatsby-image";
-import { graphql } from "gatsby"
+import { graphql } from "gatsby";
 import Center from "../components/center";
 import ResponsiveContainer from "../components/responsive-container";
 import Inset from "../components/inset";
@@ -58,7 +58,9 @@ const HeroText = styled.h1`
   color: ${colors.white};
 `;
 
-const HeroTextHighlicht = styled.span`color: ${colors.orange};`;
+const HeroTextHighlicht = styled.span`
+  color: ${colors.orange};
+`;
 
 const CustomerContainer = ResponsiveContainer.extend`
   display: flex;
@@ -87,11 +89,11 @@ const CustomerLogo = styled.div`
 `;
 
 const H2 = styled.h2`
-  color: ${colors.orange};
+  color: ${colors.textPrimary};
   margin: 0 0 24px;
 `;
 const H3 = styled.h3`
-  color: rgb(81, 84, 88);
+  color: ${colors.textPrimary};
   margin: 0 0 16px;
 `;
 
@@ -117,7 +119,7 @@ const Skill = styled.div`
   flex-direction: column;
 
   text-align: left;
-  color: rgb(118, 122, 129);
+  color: ${colors.text};
   animation: fadein 2s;
 `;
 
@@ -128,7 +130,7 @@ const SkillImage = styled.div`
   overflow: hidden;
 `;
 
-const IndexPage = ({ data }) =>
+const IndexPage = ({ data }) => (
   <Layout>
     <HeroImage>
       <Img fluid={data.contentfulAsset.fluid} style={{ height: "80vh" }} />
@@ -141,11 +143,11 @@ const IndexPage = ({ data }) =>
     </HeroImage>
     <CustomerList>
       <CustomerContainer>
-        {customers.map(logo =>
+        {customers.map(logo => (
           <CustomerLogo key={logo.alt}>
             <img src={logo.src} alt={logo.alt} />
           </CustomerLogo>
-        )}
+        ))}
       </CustomerContainer>
     </CustomerList>
     <ServiceSection>
@@ -154,15 +156,13 @@ const IndexPage = ({ data }) =>
           <H2>Unsere Leistungen</H2>
         </Center>
         <SkillGrid>
-          {data.allContentfulServices.edges.map(({ node }) =>
+          {data.allContentfulServices.edges.map(({ node }) => (
             <Skill key={node.id}>
               <SkillImage>
                 {node.image && <Img fluid={node.image.fluid} />}
               </SkillImage>
               <Inset scale="xl">
-                <H3>
-                  {node.title}
-                </H3>
+                <H3>{node.title}</H3>
                 <Text.Detail>
                   <div
                     dangerouslySetInnerHTML={{
@@ -172,11 +172,12 @@ const IndexPage = ({ data }) =>
                 </Text.Detail>
               </Inset>
             </Skill>
-          )}
+          ))}
         </SkillGrid>
       </ResponsiveContainer>
     </ServiceSection>
-  </Layout>;
+  </Layout>
+);
 
 export default IndexPage;
 
