@@ -45,6 +45,7 @@ const HeroDarkener = Center.extend`
   left: 0;
   background-color: rgba(0, 0, 0, 0.8);
   flex-grow: 1;
+  flex-direction: column;
 `;
 
 const HeroText = styled.h1`
@@ -60,6 +61,15 @@ const HeroText = styled.h1`
 
 const HeroTextHighlicht = styled.span`
   color: ${colors.orange};
+`;
+
+const HeroTextSubheadline = styled.p`
+  line-height: 1.1;
+  font-size: 2.0rem;
+  max-width: 22ch;
+  text-align: center;
+  color: #ddb992;
+  margin: 0;
 `;
 
 const CustomerContainer = ResponsiveContainer.extend`
@@ -139,6 +149,7 @@ const IndexPage = ({ data }) => (
           Wir liefern digitale Lösungen,{" "}
           <HeroTextHighlicht>die unsere Kunden lieben.</HeroTextHighlicht>
         </HeroText>
+        <HeroTextSubheadline>Und das seit 15 Jahren!</HeroTextSubheadline>
       </HeroDarkener>
     </HeroImage>
     <CustomerList>
