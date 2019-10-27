@@ -83,7 +83,7 @@ const CustomerContainer = ResponsiveContainer.extend`
 
 const CustomerList = Center.extend`
   padding: 32px 0;
-  background-color: hsla(13, 5%, 90%, 1);
+  background-color: hsla(31, 17%, 93%, 1);
 `;
 
 const CustomerLogo = styled.div`
