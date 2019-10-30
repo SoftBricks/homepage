@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "gatsby";
 import styled from "styled-components";
-import softbricks from "../../public/static/softbricks.svg";
+import softbricks from "../assets/softbricks.svg";
 
 const LogoLink = styled(Link)`
   color: white;

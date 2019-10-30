@@ -1,7 +1,20 @@
 html {
-  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
+}
+@font-face {
+  font-family: Inter;
+  src: url("../fonts/Inter-Bold.woff2");
+  font-weight: 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: Inter;
+  src: url("../fonts/Inter-Regular.woff2");
+  font-weight: 400;
+  font-display: swap;
 }
 body {
   margin: 0;
@@ -31,7 +44,7 @@ p:last-child {
   margin: 1px;
   height: 8px;
   width: 8px;
-  background: #ef891c
+  background: #ef891c;
 }
 
 @keyframes fadein {

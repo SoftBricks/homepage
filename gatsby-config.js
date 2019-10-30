@@ -9,12 +9,6 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
-      resolve: `gatsby-plugin-google-fonts`,
-      options: {
-        fonts: [`Montserrat\:400`]
-      }
-    },
-    {
       resolve: `gatsby-source-contentful`,
       options: {
         spaceId: `1ojgxivlqxzf`,

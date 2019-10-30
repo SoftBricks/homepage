@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import Helmet from "react-helmet";
 import styled from "styled-components";
-import favicon from "../../public/static/favicon.ico";
+import favicon from "../assets/favicon.ico";
 import Stack from "../components/stack";
 import CookieBanner from "../components/cookie-banner";
 import SoftBricksLogo from "../components/softbricks-logo";
@@ -26,14 +26,15 @@ const BannerBar = styled(HorizontalBar)`
   position: static;
 `;
 
-const CookieHeader = () =>
+const CookieHeader = () => (
   <BannerBar>
     <ResponsiveContainer>
       <CookieBanner />
     </ResponsiveContainer>
-  </BannerBar>;
+  </BannerBar>
+);
 
-const Header = () =>
+const Header = () => (
   <HorizontalBar>
     <ResponsiveContainer>
       <Toolbar>
@@ -41,15 +42,19 @@ const Header = () =>
         <Nav />
       </Toolbar>
     </ResponsiveContainer>
-  </HorizontalBar>;
+  </HorizontalBar>
+);
 
-const TemplateWrapper = ({ children }) =>
+const TemplateWrapper = ({ children }) => (
   <Stack scale="none">
     <Helmet
-      title="Softbricks"
+      title="Softbricks – Softwarehaus aus München"
       meta={[
-        { name: "description", content: "Sample" },
-        { name: "keywords", content: "sample, something" },
+        {
+          name: "description",
+          content:
+            "Softbricks ist ein Softwarehaus aus München spezialisiert auf maßgeschneiderte, nachhalting und effiziente Lösungen für Versandhäußer und den Onlinehandel"
+        },
         {
           name: "google-site-verification",
           content: "wt_pjO9OaKGWsP724hetEkeo-9sI_I9veo1t5ak8Liw"
@@ -62,7 +67,8 @@ const TemplateWrapper = ({ children }) =>
     <Header />
     {children}
     <Footer />
-  </Stack>;
+  </Stack>
+);
 
 TemplateWrapper.propTypes = {
   children: PropTypes.func

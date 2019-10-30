@@ -1,17 +1,17 @@
 import React from "react";
 import styled from "styled-components";
 import Img from "gatsby-image";
-import { graphql } from "gatsby"
+import { graphql } from "gatsby";
 import Center from "../components/center";
 import ResponsiveContainer from "../components/responsive-container";
 import Inset from "../components/inset";
 import Text from "../components/text";
 import colors from "../constants/colors";
 import Layout from "../layouts";
-import VersandhausWalzLogo from "../../public/static/compressed/versandhaus-walz.png";
-import OttoLogo from "../../public/static/compressed/otto.png";
-import LudwigMediaLogo from "../../public/static/compressed/ludwigmedia.png";
-import BadischerWeinLogo from "../../public/static/compressed/badischer-wein.png";
+import VersandhausWalzLogo from "../assets/compressed/versandhaus-walz.png";
+import OttoLogo from "../assets/compressed/otto.png";
+import LudwigMediaLogo from "../assets/compressed/ludwigmedia.png";
+import BadischerWeinLogo from "../assets/compressed/badischer-wein.png";
 
 const customers = [
   {
@@ -45,17 +45,32 @@ const HeroDarkener = Center.extend`
   left: 0;
   background-color: rgba(0, 0, 0, 0.8);
   flex-grow: 1;
+  flex-direction: column;
 `;
 
 const HeroText = styled.h1`
+  line-height: 1.1;
   font-size: 2.5rem;
-  max-width: 600px;
-  font-family: Montserrat, sans-serif;
+  max-width: 22ch;
+  @media (min-width: 50em) {
+    font-size: 3rem;
+  }
   text-align: center;
   color: ${colors.white};
 `;
 
-const HeroTextHighlicht = styled.span`color: ${colors.orange};`;
+const HeroTextHighlicht = styled.span`
+  color: ${colors.orange};
+`;
+
+const HeroTextSubheadline = styled.p`
+  line-height: 1.1;
+  font-size: 2.0rem;
+  max-width: 22ch;
+  text-align: center;
+  color: #ddb992;
+  margin: 0;
+`;
 
 const CustomerContainer = ResponsiveContainer.extend`
   display: flex;
@@ -68,7 +83,7 @@ const CustomerContainer = ResponsiveContainer.extend`
 
 const CustomerList = Center.extend`
   padding: 32px 0;
-  background-color: hsla(13, 5%, 90%, 1);
+  background-color: hsla(31, 17%, 93%, 1);
 `;
 
 const CustomerLogo = styled.div`
@@ -84,11 +99,11 @@ const CustomerLogo = styled.div`
 `;
 
 const H2 = styled.h2`
-  color: ${colors.orange};
+  color: ${colors.textPrimary};
   margin: 0 0 24px;
 `;
-const H4 = styled.h4`
-  color: rgb(81, 84, 88);
+const H3 = styled.h3`
+  color: ${colors.textPrimary};
   margin: 0 0 16px;
 `;
 
@@ -114,7 +129,7 @@ const Skill = styled.div`
   flex-direction: column;
 
   text-align: left;
-  color: rgb(118, 122, 129);
+  color: ${colors.text};
   animation: fadein 2s;
 `;
 
@@ -125,7 +140,7 @@ const SkillImage = styled.div`
   overflow: hidden;
 `;
 
-const IndexPage = ({ data }) =>
+const IndexPage = ({ data }) => (
   <Layout>
     <HeroImage>
       <Img fluid={data.contentfulAsset.fluid} style={{ height: "80vh" }} />
@@ -134,15 +149,16 @@ const IndexPage = ({ data }) =>
           Wir liefern digitale Lösungen,{" "}
           <HeroTextHighlicht>die unsere Kunden lieben.</HeroTextHighlicht>
         </HeroText>
+        <HeroTextSubheadline>Und das seit 15 Jahren!</HeroTextSubheadline>
       </HeroDarkener>
     </HeroImage>
     <CustomerList>
       <CustomerContainer>
-        {customers.map(logo =>
+        {customers.map(logo => (
           <CustomerLogo key={logo.alt}>
             <img src={logo.src} alt={logo.alt} />
           </CustomerLogo>
-        )}
+        ))}
       </CustomerContainer>
     </CustomerList>
     <ServiceSection>
@@ -151,15 +167,13 @@ const IndexPage = ({ data }) =>
           <H2>Unsere Leistungen</H2>
         </Center>
         <SkillGrid>
-          {data.allContentfulServices.edges.map(({ node }) =>
+          {data.allContentfulServices.edges.map(({ node }) => (
             <Skill key={node.id}>
               <SkillImage>
                 {node.image && <Img fluid={node.image.fluid} />}
               </SkillImage>
               <Inset scale="xl">
-                <H4>
-                  {node.title}
-                </H4>
+                <H3>{node.title}</H3>
                 <Text.Detail>
                   <div
                     dangerouslySetInnerHTML={{
@@ -169,11 +183,12 @@ const IndexPage = ({ data }) =>
                 </Text.Detail>
               </Inset>
             </Skill>
-          )}
+          ))}
         </SkillGrid>
       </ResponsiveContainer>
     </ServiceSection>
-  </Layout>;
+  </Layout>
+);
 
 export default IndexPage;
 
