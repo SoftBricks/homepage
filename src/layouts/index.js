@@ -4,7 +4,6 @@ import Helmet from "react-helmet";
 import styled from "styled-components";
 import favicon from "../assets/favicon.ico";
 import Stack from "../components/stack";
-import CookieBanner from "../components/cookie-banner";
 import SoftBricksLogo from "../components/softbricks-logo";
 import ResponsiveContainer from "../components/responsive-container";
 import Toolbar from "../components/toolbar";
@@ -20,19 +19,6 @@ const HorizontalBar = styled.div`
   top: 0;
   z-index: 1;
 `;
-
-const BannerBar = styled(HorizontalBar)`
-  background-color: ${colors.gray};
-  position: static;
-`;
-
-const CookieHeader = () => (
-  <BannerBar>
-    <ResponsiveContainer>
-      <CookieBanner />
-    </ResponsiveContainer>
-  </BannerBar>
-);
 
 const Header = () => (
   <HorizontalBar>
@@ -63,7 +49,6 @@ const TemplateWrapper = ({ children }) => (
     >
       <link rel="icon" href={favicon} type="image/x-icon" />
     </Helmet>
-    <CookieHeader />
     <Header />
     {children}
     <Footer />
