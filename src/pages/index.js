@@ -12,6 +12,8 @@ import VersandhausWalzLogo from "../assets/compressed/versandhaus-walz.png";
 import OttoLogo from "../assets/compressed/otto.png";
 import LudwigMediaLogo from "../assets/compressed/ludwigmedia.png";
 import BadischerWeinLogo from "../assets/compressed/badischer-wein.png";
+import DrawkitContentManColour from "../assets/drawkit-content-man-colour.svg";
+import Stack from "../components/stack";
 
 const customers = [
   {
@@ -32,31 +34,50 @@ const customers = [
   }
 ];
 
-const HeroImage = styled.div`
-  height: 80vh;
-  position: relative;
+const HeroImage = styled.img`
+  width: 80%;
+  height: auto;
+  @media (min-width: 48em) {
+    width: auto;
+    height: 80vh;
+    max-height: 460px;
+    margin-left: -32px;
+  }
 `;
 
-const HeroDarkener = Center.extend`
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-color: rgba(0, 0, 0, 0.8);
-  flex-grow: 1;
-  flex-direction: column;
+const HeroLayout = styled(Stack)`
+  margin: 64px 0 32px;
+  @media (min-width: 48em) {
+    margin-top: 0;
+    flex-direction: row;
+  }
+`;
+
+const HeroArea = styled.div`
+  position: relative;
+  background-color: ${colors.black};
+  display: flex;
+  align-items: center;
+  @media (min-width: 48em) {
+    height: 80vh;
+  }
+`;
+
+const HeroTextArea = styled.div`
+  position: relative;
 `;
 
 const HeroText = styled.h1`
   line-height: 1.1;
   font-size: 2.5rem;
   max-width: 22ch;
-  @media (min-width: 50em) {
-    font-size: 3rem;
-  }
-  text-align: center;
+  margin-top: 0;
   color: ${colors.white};
+  text-align: center;
+  @media (min-width: 48em) {
+    font-size: 3rem;
+    text-align: left;
+  }
 `;
 
 const HeroTextHighlicht = styled.span`
@@ -65,11 +86,15 @@ const HeroTextHighlicht = styled.span`
 
 const HeroTextSubheadline = styled.p`
   line-height: 1.1;
-  font-size: 2.0rem;
+  font-size: 1.6rem;
   max-width: 22ch;
-  text-align: center;
   color: #ddb992;
   margin: 0;
+  text-align: center;
+  @media (min-width: 48em) {
+    text-align: left;
+    font-size: 2rem;
+  }
 `;
 
 const CustomerContainer = ResponsiveContainer.extend`
@@ -142,16 +167,20 @@ const SkillImage = styled.div`
 
 const IndexPage = ({ data }) => (
   <Layout>
-    <HeroImage>
-      <Img fluid={data.contentfulAsset.fluid} style={{ height: "80vh" }} />
-      <HeroDarkener>
-        <HeroText>
-          Wir liefern digitale Lösungen,{" "}
-          <HeroTextHighlicht>die unsere Kunden lieben.</HeroTextHighlicht>
-        </HeroText>
-        <HeroTextSubheadline>Und das seit 15 Jahren!</HeroTextSubheadline>
-      </HeroDarkener>
-    </HeroImage>
+    <HeroArea>
+      <ResponsiveContainer>
+        <HeroLayout alignItems="center" scale="xl">
+          <HeroTextArea>
+            <HeroText>
+              Wir liefern digitale Lösungen,<br />
+              <HeroTextHighlicht>die unsere Kunden lieben.</HeroTextHighlicht>
+            </HeroText>
+            <HeroTextSubheadline>Und das seit 15 Jahren!</HeroTextSubheadline>
+          </HeroTextArea>
+          <HeroImage src={DrawkitContentManColour} alt="" />
+        </HeroLayout>
+      </ResponsiveContainer>
+    </HeroArea>
     <CustomerList>
       <CustomerContainer>
         {customers.map(logo => (
