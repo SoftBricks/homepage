@@ -26,7 +26,9 @@ const Datenschutz = () => (
             Deutschland
           </p>
           <p>
-            Tel.: +49 (0) 89 549998 700 E-Mail:
+            Tel.: +49 (0) 89 549998 700
+            <br />
+            E-Mail:
             <a href="mailto:info@softbricks.de">info@softbricks.de</a>
           </p>
           <h3>Datenschutz</h3>
@@ -195,7 +197,9 @@ const Datenschutz = () => (
             Deutschland
           </p>
           <p>
-            Tel.: +49 (0) 89 549998 700 E-Mail:
+            Tel.: +49 (0) 89 549998 700
+            <br />
+            E-Mail:
             <a href="mailto:info@softbricks.de">info@softbricks.de</a>
           </p>
         </DatenschutzContent>
