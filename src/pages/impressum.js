@@ -26,7 +26,7 @@ const Impressum = () => (
             Deutschland
           </p>
           <p>
-            Tel.: +49 (0) 89 549998 700
+            Tel.: +49 89 37061098
             <br />
             E-Mail:
             <a href="mailto:info@softbricks.de">info@softbricks.de</a>
