@@ -19,14 +19,13 @@ const Datenschutz = () => (
           <p>
             <strong>Stefan Sporrer</strong>
             <br />
-            Lindberghstr. 18
-            <br />
+            Thujaweg 3<br />
             80939 München
             <br />
             Deutschland
           </p>
           <p>
-            Tel.: +49 89 37061098
+            Tel.: +49 89 1250366 70
             <br />
             E-Mail:
             <a href="mailto:info@softbricks.de">info@softbricks.de</a>
@@ -190,14 +189,13 @@ const Datenschutz = () => (
           <p>
             <strong>Stefan Sporrer</strong>
             <br />
-            Lindberghstr. 18
-            <br />
+            Thujaweg 3<br />
             80939 München
             <br />
             Deutschland
           </p>
           <p>
-            Tel.: +49 89 37061098
+            Tel.: +49 89 1250366 70
             <br />
             E-Mail:
             <a href="mailto:info@softbricks.de">info@softbricks.de</a>
