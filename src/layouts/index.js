@@ -8,6 +8,7 @@ import SoftBricksLogo from "../components/softbricks-logo";
 import ResponsiveContainer from "../components/responsive-container";
 import Toolbar from "../components/toolbar";
 import Nav from "../components/nav";
+import Headband from "../components/headband";
 import Footer from "./footer";
 import colors from "../constants/colors";
 
@@ -49,6 +50,7 @@ const TemplateWrapper = ({ children }) => (
     >
       <link rel="icon" href={favicon} type="image/x-icon" />
     </Helmet>
+    <Headband />
     <Header />
     {children}
     <Footer />
