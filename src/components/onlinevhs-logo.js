@@ -1,18 +1,17 @@
 import React from "react";
-import { Link } from "gatsby";
 import styled from "styled-components";
 
-const LogoLink = styled(Link)`
-  color: white;
+const Link = styled.a`
   text-decoration: none;
-  display: inline-flex;
-  > svg {
-    /* display: inline-flex; */
+  color: inherit;
+  font-weight: bold;
+  :hover {
+    text-decoration: underline;
   }
 `;
 
 const OnlineVhsLogo = props => (
-  <LogoLink to="/" {...props}>
+  <Link href="https://www.onlinevhs.net" {...props}>
     <svg
       height="30"
       viewBox="0 0 805 148"
@@ -143,7 +142,7 @@ const OnlineVhsLogo = props => (
         fill="white"
       />
     </svg>
-  </LogoLink>
+  </Link>
 );
 
 export default OnlineVhsLogo;
