@@ -24,7 +24,7 @@ const DatenschutzLink = styled(Link)`
   :visited {
     color: ${colors.white3};
   }
-`
+`;
 
 export default class Footer extends Component {
   render() {
@@ -39,7 +39,12 @@ export default class Footer extends Component {
           </Toolbar>
           <Center>
             <Stack alignItems="center" scale="xl">
-              <Copyright>© 2017 SoftBricks. All Rights Reserved | <DatenschutzLink to="/datenschutz">Datenschutzerklärung</DatenschutzLink></Copyright>
+              <Copyright>
+                © 2022 SoftBricks. All Rights Reserved |{" "}
+                <DatenschutzLink to="/datenschutz">
+                  Datenschutzerklärung
+                </DatenschutzLink>
+              </Copyright>
               <a
                 href="https://www.contentful.com/"
                 rel="noopener noreferrer"
@@ -47,11 +52,11 @@ export default class Footer extends Component {
               >
                 <img
                   src="https://images.contentful.com/fo9twyrwpveg/7Htleo27dKYua8gio8UEUy/0797152a2d2f8e41db49ecbf1ccffdaa/PoweredByContentful_DarkBackground_MonochromeLogo.svg"
-                  style={{ maxWidth: 100, width: '100%' }}
+                  style={{ maxWidth: 100, width: "100%" }}
                   alt="Powered by Contentful"
                 />
               </a>
-              </Stack>
+            </Stack>
           </Center>
         </ResponsiveContainer>
       </FooterContainer>
