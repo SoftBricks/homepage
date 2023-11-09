@@ -26,6 +26,13 @@ const DatenschutzLink = styled(Link)`
     color: ${colors.white3};
   }
 `;
+const MeldestelleLink = styled.a`
+  text-decoration: none;
+  color: ${colors.white5};
+  :visited {
+    color: ${colors.white3};
+  }
+`
 
 export default class Footer extends Component {
   render() {
@@ -45,13 +52,12 @@ export default class Footer extends Component {
                 <DatenschutzLink to="/datenschutz">
                   Datenschutzerklärung
                 </DatenschutzLink> |{" "}
-                <a
+                <MeldestelleLink
                   href={interneMeldestellePDF}
                   download="interne_meldestelle.pdf"
-                  className="meldestelle-link"
                 >
                   Meldestelle nach dem HinSchG
-                </a>
+                </MeldestelleLink>
               </Copyright>
               <a
                 href="https://www.contentful.com/"
