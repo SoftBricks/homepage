@@ -48,10 +48,7 @@ export default class Footer extends Component {
                 <a
                   href={interneMeldestellePDF}
                   download="interne_meldestelle.pdf"
-                  style={{
-                    textDecoration: none,
-                    color:  "hsl(20, 7%, 50%)",
-                  }}
+                  className="meldestelle-link"
                 >
                   Meldestelle nach dem HinSchG
                 </a>

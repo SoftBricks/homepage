@@ -55,3 +55,10 @@ p:last-child {
     opacity: 1;
   }
 }
+meldestelle-link {
+  text-decoration: none;
+  color: #887D77FF;
+  :visited {
+    color: #524B47FF;
+  }
+}
