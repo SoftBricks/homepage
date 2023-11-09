@@ -9,6 +9,7 @@ import Center from "../components/center";
 import Stack from "../components/stack";
 import Toolbar from "../components/toolbar";
 import colors from "../constants/colors";
+import interneMeldestellePDF from "../assets/interne_meldestelle.pdf";
 
 const FooterContainer = styled.footer`
   background-color: ${colors.black};
@@ -40,10 +41,16 @@ export default class Footer extends Component {
           <Center>
             <Stack alignItems="center" scale="xl">
               <Copyright>
-                © 2022 SoftBricks. All Rights Reserved |{" "}
+                © 2023 SoftBricks. All Rights Reserved |{" "}
                 <DatenschutzLink to="/datenschutz">
                   Datenschutzerklärung
-                </DatenschutzLink>
+                </DatenschutzLink> |{" "}
+                <a
+                  href={interneMeldestellePDF}
+                  download="interne_meldestelle.pdf"
+                >
+                  Meldestelle nach dem HinSchG
+                </a>
               </Copyright>
               <a
                 href="https://www.contentful.com/"
